@@ -21,12 +21,12 @@ const KEYS = {
 
 async function load(key) {
   try {
-    const r = await window.storage.get(key);
+    const r = await LocalStorage.get(key);
     return r ? JSON.parse(r.value) : null;
   } catch { return null; }
 }
 async function save(key, val) {
-  try { await window.storage.set(key, JSON.stringify(val)); } catch {}
+  try { await LocalStorage.set(key, JSON.stringify(val)); } catch {}
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
